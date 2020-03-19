@@ -1,7 +1,7 @@
 {
   "name": "node-skeleton-app",
   "version": "1.0.0",
-  "description": "Sample Nodee.js Application to test Nexmo environment setup",
+  "description": "Sample Node.js Application to test Nexmo environment setup",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
