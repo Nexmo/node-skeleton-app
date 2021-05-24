@@ -1,18 +1,11 @@
 require('dotenv').config({path: __dirname + '/.env'})
 const app = require('express')()
-const bodyParser = require('body-parser')
-const Nexmo = require('nexmo')
+const Vonage = require('@vonage/server-sdk')
 
-const nexmo = new Nexmo({
-  apiKey: process.env.NEXMO_API_KEY,
-  apiSecret: process.env.NEXMO_API_SECRET
+const vonage = new Vonage({
+  apiKey: process.env.VONAGE_API_KEY,
+  apiSecret: process.env.VONAGE_API_SECRET
 })
-
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({
-  extended: true
-}))
-
 
 app
   .route('/webhooks/event')
@@ -31,9 +24,9 @@ function eventWebhook(request, response) {
 }
 
 function sendSms(request, response) {
-  const text = 'This is a test SMS of my Nexmo Node.js skeleton app.'
+  const text = 'This is a test SMS of my Vonage Node.js skeleton app.'
 
-  nexmo.message.sendSms(process.env.FROM_NUMBER, process.env.TO_NUMBER, text, (err, responseData) => {
+  vonage.message.sendSms(process.env.FROM_NUMBER, process.env.TO_NUMBER, text, (err, responseData) => {
     if (err) {
       response.status(404).send(err)
     } else {
