@@ -1,0 +1,26 @@
+{
+    "name": "Vonage Node Skeleton App",
+    "description": "Sample Node.js Application to test Vonage environment setup",
+    "repository": "https://github.com/Nexmo/node-skeleton-app",
+    "keywords": [
+        "express",
+        "node",
+        "heroku",
+        "vonage"
+    ],
+    "image": "heroku/node",
+    "env": {
+        "VONAGE_API_KEY": {
+            "description": "Find your account API key and secret on the dashboard https://dashboard.nexmo.com"
+        },
+        "VONAGE_API_SECRET": {
+            "description": "Find your account API key and secret on the dashboard https://dashboard.nexmo.com"
+        },
+        "FROM_NUMBER": {
+            "description": "Phone number to send message from."
+        },
+        "TO_NUMBER": {
+            "description": "Phone number to send message to."
+        }
+    }
+}
